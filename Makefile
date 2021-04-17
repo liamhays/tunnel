@@ -1,5 +1,5 @@
 SMSLIB=SMSlib_GG.lib
-SDCC_MAX_ALLOCS_PER_NODE=3000
+SDCC_MAX_ALLOCS_PER_NODE=3000 # set to 30000 for release
 SDCC_FLAGS=--allow-unsafe-read --max-allocs-per-node $(SDCC_MAX_ALLOCS_PER_NODE) --opt-code-speed -mz80 --std-sdcc99
 all:
 # The architecture of the Z80 means we can enable unsafe reads, according to the SDCC manual
