@@ -17,9 +17,11 @@ You are the pilot of the space cruiser *Purple*, and your job is to
 get as far as possible into deep space without colliding with the
 yellowite stone columns of the evil alien forces, the Zragchlomphs.
 
+![Title screen](title_screen.png)
 At the title screen, select your desired difficulty level. "Hard" adds
 a Zragchlomph ship you have to avoid.
 
+![Gameplay in hard mode](hard_mode.png)
 Once in the game, the great cruiser *Purple* is constantly falling
 unless you press the 2 button to make it rise again. Avoid hitting the
 columns and the green ship, if enabled. The START button will let you
