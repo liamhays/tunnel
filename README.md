@@ -3,11 +3,11 @@ My first devkitSMS project, a small arcade game for the Game Gear
 
 # Building
 Install SDCC (probably from source, though it's available in the Arch
-Linux package repos) and follow the directions at
-[[devkitSMS][https://github.com/sverx/devkitSMS]] to set up
-devkitSMS. I keep SMSlib.h, SMSlib\_GG.h, and crt0\_sms.rel checked
-into this repository, and I will try to keep them up-to-date as
-devkitSMS is updated.
+Linux package repos) and follow the directions for
+[devkitSMS](https://github.com/sverx/devkitSMS) to set up devkitSMS. I
+keep SMSlib.h, SMSlib\_GG.h, and crt0\_sms.rel checked into this
+repository, and I will try to keep them up-to-date as devkitSMS is
+updated.
 
 Once devkitSMS' tools are installed, the Makefile should do the
 rest. Compile with `make`, and the output ROM is `tunnel.gg`.
