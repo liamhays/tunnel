@@ -33,3 +33,8 @@ ceiling: the position of the explosion seems off. I am yet to try this
 on real hardware, so it's possible (though unlikely) that it's an
 error in Emulicious, the emulator I use to test.
 
+# Why
+This is a simple project, but it helped me understand a lot that I
+likely wouldn't have understood had I built this in assembly, with my
+limited experience. I think it's also a good example of a project you
+can make with devkitSMS, and it uses many of the library's features.
