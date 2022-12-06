@@ -169,7 +169,7 @@ void update_ship_position() {
   SMS_updateSpritePosition(ship_sprites[9], ship_x + 24, ship_y + 16);
   SMS_updateSpritePosition(ship_sprites[10], ship_x, ship_y + 24);
   SMS_updateSpritePosition(ship_sprites[11], ship_x + 8, ship_y + 24);
-  UNSAFE_SMS_copySpritestoSAT(); // we're in VBlank, this is okay
+  SMS_copySpritestoSAT(); // we're in VBlank, this is okay
 }
 
 unsigned char display_frames = 0;
