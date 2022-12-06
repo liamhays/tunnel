@@ -1,4 +1,4 @@
-const unsigned int title_palette[] = {0x000, 0xB90, 0x0FD, 0xFFF};
+const unsigned int title_palette[16] = {0x000, 0xB90, 0x0FD, 0xFFF};
 
 // separating it all into rows saves a good bit of data
 const unsigned int

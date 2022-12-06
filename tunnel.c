@@ -33,15 +33,16 @@ void update_tunnel();
 void start_button_loop();
 
 const unsigned int
-bg_palette[] = {0x000, RGBHTML(0x5742F5), 0x0FF, 0xFFF, 0x11E, 0x06F, 0x0BF,
+bg_palette[16] = {0x000, RGBHTML(0x5742F5), 0x0FF, 0xFFF, 0x11E, 0x06F, 0x0BF,
 //              black          purple     yellow white  red   orange  lighter orange
-		RGBHTML(0xFFBF00), RGBHTML(0xFFE100), RGBHTML(0xFFF700), RGBHTML(0xA6B238)};
+		  RGBHTML(0xFFBF00), RGBHTML(0xFFE100), RGBHTML(0xFFF700), RGBHTML(0xA6B238), 
 		// seven           eight               nine               ten
+		  0, 0, 0, 0, 0};
 
 // we need to include black, the ship's purple, and the explosion
 // colors, because they're all used as sprites.
 const unsigned int
-sprite_palette[] = {0x000, // black
+sprite_palette[16] = {0x000, // black
 		    RGBHTML(0x5742F5), 0x0FF, 0xFFF, 0x11E, 0x06F, 0x0BF, RGBHTML(0x1FA100), RGBHTML(0xCE00FF)};
 
 
@@ -597,8 +598,35 @@ void title_screen() {
   start_sound();
 }
 
-void main() {
+void clearVRAM() {
+  // from Maxim's tutorial
+__asm
+	push af
+	push bc
+    
+    ; 1. Set VRAM write address to 0 by outputting $4000 ORed with $0000
+    ld a,#0x00
+    out (0xbf),a
+    ld a,#0x40
+    out (0xbf),a
+    ; 2. Output 16KB of zeroes
+    ld bc,#0x4000    ; Counter for 16KB of VRAM
+    
+    loop:
+        ld a,#0x00    ; Value to write
+        out (0xbe),a ; Output to VRAM
+        dec bc
+        ld a,b
+	or c
+        jp nz,loop
 
+     pop bc
+     pop af
+__endasm;
+}
+
+void main() {
+  clearVRAM();
   erase_screen();
   // load the title screen, wait for START press
   title_screen();
